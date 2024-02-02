@@ -8,11 +8,14 @@ try:
 except FileNotFoundError:
     contacts = {}
 
+
 # Function to add a new contact
 def add_contact(name, phone_number, email):
     """Adds a new contact to the contacts dictionary and saves it to a JSON file."""
     # Format phone number as xxx-xxx-xxxx
-    formatted_phone_number = '-'.join([phone_number[:3], phone_number[3:6], phone_number[6:]])
+    formatted_phone_number = "-".join(
+        [phone_number[:3], phone_number[3:6], phone_number[6:]]
+    )
 
     contacts[name] = {
         "phone_number": formatted_phone_number,
@@ -23,6 +26,7 @@ def add_contact(name, phone_number, email):
     with open("contacts.json", "w", encoding="utf-8") as wf:
         json.dump(contacts, wf)
 
+
 # Function to search for a contact
 def search_contact(name):
     """Searches for a contact in the contacts dictionary."""
@@ -31,6 +35,7 @@ def search_contact(name):
     else:
         return None
 
+
 # Function to print the contacts
 def print_contacts():
     """Prints all the contacts in the contacts dictionary."""
@@ -38,6 +43,7 @@ def print_contacts():
         print(f"Name: {name}")
         print(f"Phone number: {contact['phone_number']}")
         print(f"Email: {contact['email']}")
+
 
 # Main function
 def main():
@@ -64,6 +70,7 @@ def main():
         return
     else:
         print("Invalid choice")
+
 
 # Run the main function
 if __name__ == "__main__":

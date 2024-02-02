@@ -4,7 +4,7 @@ import sys
 # change this to your coffee shop name
 COFFEE_SHOP_NAME = "HTP28"
 
-print("Hello, welcome to " + COFFEE_SHOP_NAME +" Coffee!!!\n")
+print("Hello, welcome to " + COFFEE_SHOP_NAME + " Coffee!!!\n")
 
 # ask for the customer name
 name = input("What's your name?\n")
@@ -60,4 +60,12 @@ total = PRICE * int(quantity)
 
 print("\nThe total price is: $" + str(total))
 
-print("\nSounds good " + name + ", we'll serve your " + quantity + " " + order + " in a moment.")
+print(
+    "\nSounds good "
+    + name
+    + ", we'll serve your "
+    + quantity
+    + " "
+    + order
+    + " in a moment."
+)

@@ -1,4 +1,5 @@
 """Module providing function to help a customer order a cup of coffee"""
+
 import sys
 
 # change this to your coffee shop name
@@ -33,19 +34,19 @@ while True:
 
     if order in MENU:
         if order == MENU[0]:
-            PRICE = 3
+            price = 3
         elif order == MENU[1]:
-            PRICE = 8
+            price = 8
         elif order == MENU[2]:
             add_cream = input("\nDo you want to add cream?\n")
             if add_cream == "Yes":
-                PRICE = 11
+                price = 11
             else:
-                PRICE = 9
+                price = 9
         elif order == MENU[3]:
-            PRICE = 12
+            price = 12
         elif order == MENU[4]:
-            PRICE = 13
+            price = 13
 
         break
 
@@ -54,18 +55,13 @@ while True:
     print(MENU)
 
 # ask for the quantity the customer wants to order
-quantity = input("\nHow many coffees would you like?\n")
+quantity = int(input("\nHow many coffees would you like?\n"))
 
-total = PRICE * int(quantity)
+total = price * quantity
 
 print("\nThe total price is: $" + str(total))
 
-print(
-    "\nSounds good "
-    + name
-    + ", we'll serve your "
-    + quantity
-    + " "
-    + order
-    + " in a moment."
-)
+if quantity > 1:
+    print(f"\nSounds good {name}, we'll serve your {quantity} {order}s in a moment.")
+else:
+    print(f"\nSounds good {name}, we'll serve your {quantity} {order} in a moment.")
